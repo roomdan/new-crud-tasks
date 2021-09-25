@@ -26,6 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 0.2rem;
 
     .btn-edit{
         width: 3rem;
@@ -36,11 +37,13 @@
         width: 2rem;
         height: 2rem;
         background: url(./remove.svg);
+        background-repeat: no-repeat;
     }
     .btn-complete{
         width: 3rem;
         height: 3rem;
         background: url(./checked.svg);
+        background-repeat: no-repeat;
     }
 }
 

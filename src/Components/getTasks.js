@@ -27,7 +27,7 @@ const ViewTasks = ({value})=>{
 
 
     return (
-        <div className='w-screen flex justify-center p-10' >
+        <div className='w-screen flex justify-center p-2 md:p-10' >
             <section className='rounded-sm	 flex-col md:w-1/2 w-screen justify-center h-auto bg-grey '>
                 <div className='w-full flex justify-center items-center text-black h-16 font-bold text-xl'>
                     <span>Unresolved Tasks</span>

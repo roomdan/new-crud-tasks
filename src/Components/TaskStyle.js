@@ -13,13 +13,13 @@ const TaskStyle = ({name, date, task, complete})=>{
                     <input className='a-t-b-in-task' readOnly value={task}/>
                 </div>
                 <div className='a-t-b-item-btn'>
-                    <button className='btn-delete'></button>
+                    <button className='btn-complete'></button>
                 </div>
                 <div className='a-t-b-item-btn'>
                     <button className='btn-edit'>Edit</button>
                 </div>
                 <div className='a-t-b-item-btn'>
-                    <button className='btn-complete'></button>
+                    <button className='btn-delete'></button>
                 </div>
             </div>
         </div>
