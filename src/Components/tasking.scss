@@ -1,0 +1,46 @@
+.a-t-t{
+    margin-bottom: 0.1rem;
+    width: 100%;
+    justify-content: space-between;
+    .a-t-t-h3{
+        color: rgb(39, 39, 39);
+        font-size: 1.1em;
+        text-transform: capitalize;
+    }
+    .a-t-t-p{
+        color: rgb(39, 39, 39);
+    }
+}
+
+.a-t-b-in{
+    width: 70%;
+    .a-t-b-in-task{
+        width: 100%;
+        border-radius: 0.1rem;
+        padding: 0.2rem;
+    }
+}
+
+.a-t-b-item-btn{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn-edit{
+        width: 3rem;
+        height: 2rem;
+        background-color: greenyellow;
+    }
+    .btn-delete{
+        width: 2rem;
+        height: 2rem;
+        background: url(./remove.svg);
+    }
+    .btn-complete{
+        width: 3rem;
+        height: 3rem;
+        background: url(./checked.svg);
+    }
+}
+
