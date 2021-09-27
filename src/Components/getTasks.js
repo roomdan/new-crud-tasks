@@ -14,7 +14,6 @@ const ViewTasks = ()=>{
             const Get = async ()=>{
                 const acc = await Http_get();
                 setData(acc.data);
-                console.log(acc.data);
             }
             Get();
             if(change!==0){
