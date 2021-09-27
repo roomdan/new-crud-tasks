@@ -32,5 +32,16 @@ url=url.url
         return Patch
     }
 
-export {Http_get, Http_post}
+
+    const Http_delete = (id)=>{
+       axios(
+            {
+                method:'delete',
+                baseURL:'https://todos-go.herokuapp.com/api/todos',
+                url:id
+            }
+        )
+    }
+
+export {Http_get, Http_post, Http_delete}
 

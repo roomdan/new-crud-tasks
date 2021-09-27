@@ -10,7 +10,7 @@ const LogInPage = ()=>{
 
     const t = ()=>{
         if(value){
-            setValue({in:true}); history.push("/home")
+            setValue({in:true, change:0}); history.push("/home")
         }
         else {
             history.push('/')

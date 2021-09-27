@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Link, Route, useRouteMatch } from "react-router-dom";
 import { LogIn } from "../log-in"
 import Tasks from "../tasks.js/allTasks";
@@ -10,10 +10,8 @@ import ViewTasks from "../Components/getTasks";
 const Form = ()=>{
 
     const [value, setValue] = useContext(LogIn);
-    const [unic, setUnic] = useState('')
 
     const  {url} = useRouteMatch();
-
 
     return (
         <div className='h-screen w-screen'>
@@ -22,10 +20,10 @@ const Form = ()=>{
                         <Link to='/'>The best tasks</Link></h1>
                     <button onClick={()=>{logOut(value,setValue)}} className='mg-2 bg-white w-20 h-12 rounded'>Log-Out</button>
             </div>
-            <NewTask handleTask={(e)=>{setUnic(e)}}/>
+            <NewTask/>
             <Tasks>
                 <Route path={`${url}`}>
-                    <ViewTasks on={unic}/>
+                    <ViewTasks/>
                 </Route>
             </Tasks>
         </div>

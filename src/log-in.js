@@ -2,7 +2,7 @@ import { createContext,  useState } from "react"
 
 function LogIns ({children}) {
 
-    const [state, setState] = useState({in:false})
+    const [state, setState] = useState({in:false, change:0})
 
     return (
         <LogIn.Provider value={[state, setState]}>

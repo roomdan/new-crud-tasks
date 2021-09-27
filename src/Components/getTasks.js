@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LogIn } from "../log-in";
 import { Http_get } from "./http.oppers";
 import TaskStyle from "./TaskStyle"
 
-const ViewTasks = ({value})=>{
+const ViewTasks = ()=>{
 
- const [data, setData] = useState('')
+ const [data, setData] = useState('');const [change, setChange ] = useState(0);
 
-    console.log(value);
+ const [value] = useContext(LogIn);
 
     useEffect(
         ()=>{
@@ -15,15 +16,18 @@ const ViewTasks = ({value})=>{
                 setData(acc.data);
                 console.log(acc.data);
             }
-            Get()
-        },[]
+            Get();
+            if(change!==0){
+                Get()
+                setChange(0)
+            }
+        },[change, value.change]
     )
-
     const tasks = data?data.todos.map(
         e=>{
-            return <TaskStyle complete={e.isCompleted} task={e.task} name={e.student} key={e.id} />
+            return <TaskStyle change={(t)=>{setChange(change+t)}} complete={String(e.isCompleted)} id={e.id} task={e.task} name={e.student} key={e.id} />
         }
-    ):''
+    ):'loading'
 
 
     return (

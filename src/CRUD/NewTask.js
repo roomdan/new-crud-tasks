@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext,useState } from "react";
 import { Http_post } from "../Components/http.oppers";
+import { LogIn } from "../log-in";
 
-const NewTask = ({handleTask})=>{
+const NewTask = ()=>{
 
     const [add, setAdd] = useState(false); const [view,setView] = useState('');
     const [register, setRegister] = useState({fullName:'', task:'', date:''});
     const [importan, setImportan] = useState('Hi, thanks for coming back');
-    const [newTask, setNewTask] = useState(0);
+
+
+    const [value, setValue] = useContext(LogIn);
+    
+    let formComplited = false;
 
     const addTask = ()=>{
         if(!add) {
@@ -27,38 +32,20 @@ const NewTask = ({handleTask})=>{
 const createTask = ()=>{
     var b= register.fullName === "" || register.task === '' || register.date === ''
     if(b) {
-        setImportan('Note: All fields are necesary')
+        setImportan('All fields are necesary')
     }
     else {
-        setImportan('Note: New task was added');
-        handleTask(1);
-        setNewTask(newTask+1)
+        setImportan('New task was added');
+        formComplited = true;
     }
 }
 
-
-
-
-useEffect(
-    ()=>{
-        
-        const patch = ()=>{
-            class task {
-                constructor(student, task){
-                    this.student = student;
-                    this.task = task;
-                    this.isCompleted = false;
-                }
-            }            
-            const addT = new task(register.fullName, register.task);
-            Http_post(addT)
-        }
-        if(newTask!==0){
-            patch()
-        }
-
-    }, [newTask, register]
-)
+function Create () {
+    if(formComplited) {
+        Http_post({student: register.fullName, task:register.task, isCompleted:false});
+        formComplited=false;
+    }
+}
 
     return (
         <>
@@ -83,7 +70,7 @@ useEffect(
                                 </label>
                                 <label className='input-taks'>
                                 <p className='text-white'>{importan}</p>
-                                    <button onClick={()=>{createTask()}} type='button' className='in-regis-btn'>Add Task</button>
+                                    <button onClick={()=>{createTask(); Create(); setValue({...value, change:value.change+1}); setRegister({fullName:'', task:'', date:''})}} type='button' className='in-regis-btn'>Add Task</button>
                                 </label>
                         </form>
                     </div>
