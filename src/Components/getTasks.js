@@ -1,13 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 import { LogIn } from "../log-in";
 import { Http_get } from "./http.oppers";
+import Loader from "./loader/loader";
 import TaskStyle from "./TaskStyle"
 
 const ViewTasks = ()=>{
 
  const [data, setData] = useState('');const [change, setChange ] = useState(0);
 
+
  const [value] = useContext(LogIn);
+
+ 
 
     useEffect(
         ()=>{
@@ -24,9 +28,9 @@ const ViewTasks = ()=>{
     )
     const tasks = data?data.todos.map(
         e=>{
-            return <TaskStyle change={(t)=>{setChange(change+t)}} complete={String(e.isCompleted)} id={e.id} task={e.task} name={e.student} key={e.id} />
+            return <TaskStyle ok={b=>{e.isCompleted=b}} change={(t)=>{setChange(change+t)}} complete={String(e.isCompleted)} id={e.id} task={e.task} name={e.student} key={e.id} />
         }
-    ):'loading'
+    ):<Loader></Loader>
 
 
     return (

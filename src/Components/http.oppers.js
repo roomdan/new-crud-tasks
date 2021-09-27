@@ -43,5 +43,9 @@ url=url.url
         )
     }
 
-export {Http_get, Http_post, Http_delete}
+    const Http_put = (id)=>{
+        axios.put(`https://todos-go.herokuapp.com/api/todos/${id}`, {isCompleted:true})
+    }
+
+export {Http_get, Http_post, Http_delete, Http_put}
 

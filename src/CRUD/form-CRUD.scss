@@ -14,32 +14,35 @@
     min-height: 90vh;
 }
 
+
+.view-btn-1{
+    height: 3rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.795);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: sticky;
+    top: 0px;
+    .btn-v-1{
+        width: 2rem;
+        height: 2rem;
+        background: url(./add.svg);
+    }    
+    }
+
 .add-task{
     position: fixed;
     right: -15.5rem;
     max-width:20rem;
-    min-height: 10rem;
     display: flex;
     flex-direction: row;
     transition: right 250ms linear;
     margin-top: 0.1rem;
     margin-right: 0.3rem;
-    .view-btn{
-        height: 5rem;
-        padding: 1rem;
-        background-color: rgba(0, 0, 0, 0.795);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        border-top-left-radius: 1rem;
-        border-bottom-left-radius: 1rem;
-        }
-        .btn-v{
-            width: 3rem;
-            height: 3rem;
-            background: url(./add.svg);
-    }
+
     .crud-form{
         .form-push{
          min-width: 30%;
@@ -51,8 +54,6 @@
          background-color: rgba(0, 0, 0, 0.5);  
          backdrop-filter: blur(15px);
          border-radius: 1rem;
-         border-bottom-left-radius:1rem;
-         border-top-left-radius: 0rem;
          .title-form{
              display: flex;
              justify-content: center;
