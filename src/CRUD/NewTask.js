@@ -7,7 +7,6 @@ const NewTask = ()=>{
     const [add, setAdd] = useState(false); const [view,setView] = useState('');
     const [register, setRegister] = useState({fullName:'', task:'', date:''});
     const [importan, setImportan] = useState('Hi, thanks for coming back');
-    const [Height, setHeight] = useState({height:'0', width:'auto'})
 
 
     const [value, setValue] = useContext(LogIn);
@@ -18,13 +17,13 @@ const NewTask = ()=>{
         if(!add) {
             setView('0px');
             setAdd(true);
-            setHeight({minHeight:'30vh'})
         }
         else{
             setView('-15.5rem')
             setAdd(false);
     }
     }
+
  window.onkeydown = e=>{
      if(e.key === 'Escape'){
          addTask()
@@ -56,7 +55,7 @@ function Create () {
                 </div>
              <div className='add-task' style={{right:view}}>
                 <div className='crud-form'>
-                    <div className='form-push' style={Height}>
+                    <div className='form-push'>
                         <div className='title-form'>
                             <h2>ADD NEW TASK</h2>
                         </div>

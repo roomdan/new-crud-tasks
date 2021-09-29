@@ -8,10 +8,7 @@ const ViewTasks = ()=>{
 
  const [data, setData] = useState('');const [change, setChange ] = useState(0);
 
-
  const [value] = useContext(LogIn);
-
- 
 
     useEffect(
         ()=>{
@@ -24,8 +21,10 @@ const ViewTasks = ()=>{
                 Get()
                 setChange(0)
             }
-        },[change, value.change]
+        },[change, value]
     )
+
+
     const tasks = data?data.todos.map(
         e=>{
             return <TaskStyle ok={b=>{e.isCompleted=b}} change={(t)=>{setChange(change+t)}} complete={String(e.isCompleted)} id={e.id} task={e.task} name={e.student} key={e.id} />
