@@ -27,9 +27,6 @@ const dnone = ()=>{
         },1000
     )
 }
-
-
-
     return (
         <div style={{
             display:d
