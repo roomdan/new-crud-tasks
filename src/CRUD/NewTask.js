@@ -8,7 +8,6 @@ const NewTask = ()=>{
     const [register, setRegister] = useState({fullName:'', task:'', date:''});
     const [importan, setImportan] = useState('Hi, thanks for coming back');
 
-
     const [value, setValue] = useContext(LogIn);
     
     let formComplited = false;
